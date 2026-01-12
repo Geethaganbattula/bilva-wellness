@@ -4,6 +4,7 @@ router = APIRouter(
     prefix="/products",
     tags=["Products"]
 )
+BASE_URL = "https://bilva-wellness-backend.onrender.com"
 
 products = [
     {
@@ -122,7 +123,7 @@ products = [
         "name": "Reloxygen Capsule",
         "shortDescription": "Herbal respiratory support formulation for strong and healthy lungs.",
         "description": "Reloxygen is an exclusive herbal respiratory support formulation developed by Bilva Wellness to purify lungs, improve breathing capacity and strengthen respiratory health.",
-        "image": f"{BASE_URL}/static/relo.png", # type: ignore
+        "image": f"{BASE_URL}/static/relo.png", 
         "composition": [
             "Sveta Musali (Chlorophytum borivillianum)",
             "Vaasa (Justicia adhatoda)",
