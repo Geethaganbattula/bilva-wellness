@@ -11,7 +11,7 @@ products = [
         "name": "Dermacare Capsule",
         "shortDescription": "Exclusive herbal skin care formulation that nourishes and protects skin from within.",
         "description": "Dermacare is an exclusive herbal skin care formulation thoughtfully developed by Bilva Wellness to nourish, protect and improve overall skin health from within.",
-        "image": "http://localhost:8000/static/Derma.png",
+        "image": f"{BASE_URL}/static/Derma.png", # type: ignore
         "composition": [
             "Sveta Musali (Chlorophytum borivillianum)",
             "Nimba (Azadirachta indica)",
@@ -54,7 +54,7 @@ products = [
         "name": "Insuwell Capsule",
         "shortDescription": "Herbal diabetic support formulation for controlling Type II diabetes.",
         "description": "Insuwell is an exclusive herbal diabetic support formulation developed by Bilva Wellness to help control blood sugar levels and reduce diabetes-related complications.",
-        "image": "http://localhost:8000/static/insuwell.png",
+        "image": f"{BASE_URL}/static/insuwell.png", # type: ignore
         "composition": [
             "Saptarangi (Salacia reticulata)",
             "Nimba (Azadirachta indica)",
@@ -88,7 +88,7 @@ products = [
         "name": "Madhu Niyantran Ras",
         "shortDescription": "Herbal diabetic management drink supporting healthy blood sugar levels.",
         "description": "Madhu Niyantran Ras is an exclusive herbal diabetic management drink developed by Bilva Wellness to support blood sugar control, digestion and metabolism.",
-        "image": "http://localhost:8000/static/madhu.png",
+        "image": f"{BASE_URL}/static/madhu.png",
         "composition": [
             "Jambuk (Syzygium cumini)",
             "Podapatri (Madhunasini)",
@@ -122,7 +122,7 @@ products = [
         "name": "Reloxygen Capsule",
         "shortDescription": "Herbal respiratory support formulation for strong and healthy lungs.",
         "description": "Reloxygen is an exclusive herbal respiratory support formulation developed by Bilva Wellness to purify lungs, improve breathing capacity and strengthen respiratory health.",
-        "image": "http://localhost:8000/static/relo.png",
+        "image": f"{BASE_URL}/static/relo.png", # type: ignore
         "composition": [
             "Sveta Musali (Chlorophytum borivillianum)",
             "Vaasa (Justicia adhatoda)",
@@ -154,7 +154,7 @@ products = [
         "name": "Jeevamruth Drink",
         "shortDescription": "Herbal respiratory support formulation for strong and healthy lungs.",
         "description": "Jeevamruth is an exclusive herbal respiratory support formulation developed by Bilva Wellness to purify lungs, improve breathing capacity and strengthen respiratory health.",
-        "image": "http://localhost:8000/static/Jeevamruth_Drink.png",
+        "image": f"{BASE_URL}/static/Jeevamruth_Drink.png",
         "composition": [
             "Sveta Musali (Chlorophytum borivillianum)",
             "Vaasa (Justicia adhatoda)",
