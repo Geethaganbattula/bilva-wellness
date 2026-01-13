@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException # type: ignore
+from fastapi import APIRouter, HTTPException
 
 router = APIRouter(
     prefix="/products",
@@ -12,7 +12,7 @@ products = [
         "name": "Dermacare Capsule",
         "shortDescription": "Exclusive herbal skin care formulation that nourishes and protects skin from within.",
         "description": "Dermacare is an exclusive herbal skin care formulation thoughtfully developed by Bilva Wellness to nourish, protect and improve overall skin health from within.",
-        "image": f"{BASE_URL}/static/Derma.png", # type: ignore
+        "image": f"{BASE_URL}/static/Derma.png",
         "composition": [
             "Sveta Musali (Chlorophytum borivillianum)",
             "Nimba (Azadirachta indica)",
@@ -55,7 +55,7 @@ products = [
         "name": "Insuwell Capsule",
         "shortDescription": "Herbal diabetic support formulation for controlling Type II diabetes.",
         "description": "Insuwell is an exclusive herbal diabetic support formulation developed by Bilva Wellness to help control blood sugar levels and reduce diabetes-related complications.",
-        "image": f"{BASE_URL}/static/insuwell.png", # type: ignore
+        "image": f"{BASE_URL}/static/insuwell.png",
         "composition": [
             "Saptarangi (Salacia reticulata)",
             "Nimba (Azadirachta indica)",
@@ -197,3 +197,4 @@ def get_product(product_id: int):
         if product["id"] == product_id:
             return product
     raise HTTPException(status_code=404, detail="Product not found")
+
