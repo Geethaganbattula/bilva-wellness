@@ -1,10 +1,9 @@
-from fastapi import APIRouter # type: ignore
+from fastapi import APIRouter
 from datetime import datetime
 from app.services import order_service
 
-router = APIRouter(prefix="/order", tags=["Order"])
+router = APIRouter(tags=["Order"])
 
-# 🔴 TEMP storage (server restart ayithe clear avuthundi)
 ORDERS = []
 
 @router.post("/place")
