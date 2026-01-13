@@ -9,20 +9,38 @@ app = FastAPI(
     version="1.0.0"
 )
 
+# ==============================
+# CORS CONFIG (IMPORTANT)
+# ==============================
 app.add_middleware(
     CORSMiddleware,
-    allow_origin_regex=r"https://.*\.vercel\.app",
+    allow_origins=["*"],  # 🔥 Vercel + local + future domains
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+# ==============================
+# STATIC FILES
+# ==============================
 app.mount(
     "/static",
     StaticFiles(directory="app/static"),
     name="static"
 )
 
-app.include_router(product.router)
-app.include_router(order.router)
+# ==============================
+# ROUTERS
+# ==============================
+app.include_router(product.router, prefix="/products", tags=["Products"])
+app.include_router(order.router, prefix="/orders", tags=["Orders"])
 
+# ==============================
+# ROOT TEST API
+# ==============================
+@app.get("/")
+def root():
+    return {
+        "status": "Bilva Wellness Backend Running",
+        "docs": "/docs"
+    }
