@@ -1,9 +1,7 @@
 from fastapi import APIRouter, HTTPException
 
-router = APIRouter(
-    prefix="/products",
-    tags=["Products"]
-)
+router = APIRouter(prefix="/products", tags=["Products"])
+
 BASE_URL = "https://bilva-wellness-backend.onrender.com"
 
 products = [
@@ -197,4 +195,5 @@ def get_product(product_id: int):
         if product["id"] == product_id:
             return product
     raise HTTPException(status_code=404, detail="Product not found")
+
 
