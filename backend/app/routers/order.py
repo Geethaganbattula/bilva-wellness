@@ -1,22 +1,28 @@
 from fastapi import APIRouter
 from datetime import datetime
+from pydantic import BaseModel
 from app.services import order_service
 
-router = APIRouter(tags=["Order"])
+router = APIRouter(prefix="/order", tags=["Order"])
 
 ORDERS = []
 
+class OrderRequest(BaseModel):
+    customer: dict
+    products: list
+    total: int
+
 @router.post("/place")
-def place_order(data: dict):
+def place_order(data: OrderRequest):
     order_id = order_service.generate_order_id()
 
     order = {
         "id": order_id,
         "date": datetime.now().strftime("%d %b %Y"),
-        "total": data.get("total", 0),
+        "total": data.total,
         "status": "Placed",
-        "customer": data.get("customer"),
-        "products": data.get("products"),
+        "customer": data.customer,
+        "products": data.products,
     }
 
     ORDERS.append(order)
@@ -25,7 +31,6 @@ def place_order(data: dict):
         "success": True,
         "order_id": order_id
     }
-
 
 @router.get("/list")
 def list_orders():
