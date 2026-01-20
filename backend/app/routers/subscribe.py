@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 
-from app.database import get_db
+from app.db.database import get_db
 from app.models.subscriber import Subscriber
 from app.schemas.subscribe import SubscribeCreate
 
@@ -23,3 +23,4 @@ def subscribe(data: SubscribeCreate, db: Session = Depends(get_db)):
     db.refresh(subscriber)
 
     return {"message": "Subscribed successfully"}
+
