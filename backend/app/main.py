@@ -3,11 +3,16 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from app.routers import product, order, subscribe
+from app.db.database import engine
+from app.models import subscriber   # 👈 VERY IMPORTANT
 
 app = FastAPI(
     title="Bilva Wellness API",
     version="1.0.0"
 )
+
+# 🔥 CREATE TABLES
+subscriber.Base.metadata.create_all(bind=engine)
 
 app.add_middleware(
     CORSMiddleware,
